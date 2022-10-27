@@ -29,8 +29,7 @@ img {
 }
 .container {
     width: 1200px;
-    margin-right: auto;
-    margin-left: auto;
+    @include marginCentered(auto, auto);
     padding-left: 15px;
     padding-right: 15px;
 
@@ -60,4 +59,54 @@ img {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+.main-button{
+    border: 1px solid transparent;
+    background-color: $accent-color;
+    color: $white-color;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+}
+
+.social-list{
+    @include centeredFlex(flex, center, null);
+    margin-right: 0;
+
+}
+.social-list__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-list--link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color $animation;
+
+    &:hover,
+    &:focus{
+        background-color: $accent-color;
+    }
+
+}
+
+.social-list--icon {
+    width: 20px;
+    height: 20px;
+    fill: $icon-color;
+    transition: fill $animation;
+
+    .social-list--link:hover &,
+    .social-list--link:focus &{
+        fill: $white-color;
+    }
+
 }

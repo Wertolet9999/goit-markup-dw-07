@@ -3,3 +3,7 @@
    justify-content: $justCont;
    align-items: $aliItm; 
 }
+@mixin marginCentered($margRight:auto,$margLeft:auto) {
+    margin-right: $margRight;
+    margin-left: $margLeft;
+}
